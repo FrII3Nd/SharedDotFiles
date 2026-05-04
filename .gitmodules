@@ -1,6 +1,3 @@
-[submodule "nvim"]
-	path = ./.config/nvim
-	url = git@github.com:FrII3Nd/NvChadConfig.git
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:FrII3Nd/NvChadConfig.git
