@@ -134,8 +134,5 @@ configuration {
 /*      me-accept-custom: "Control+MouseD1";*/
 }
 
-//@theme "dracula.rasi"
+@theme "./nord.rasi"
 
-@theme "/home/superuser/.local/share/rofi/themes/nord.rasi"
-
-// @theme "/home/superuser/.local/share/rofi/themes/rounded-nord-dark.rasi"
