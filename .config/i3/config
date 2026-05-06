@@ -66,14 +66,11 @@ exec_always --no-startup-id setcursor
 # exec --no-startup-id ~/.local/bin/shcts    # comment stop autostart cheatsheet
 exec_always --no-startup-id ${HOME}/.config/polybar/launch.sh
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id "source ${HOME}/.config/conky/informant/launch.sh"
 exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 exec --no-startup-id ~/.local/bin/fastfetch-garuda
 exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 
-# Toggle conky 
-bindsym $super+m exec --no-startup-id "pkill -x conky ||  conky -c  ${HOME}/.config/conky/informant/inf-blue.conkyrc"
 
 # start dmenu (a program launcher)
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=20'"
@@ -162,8 +159,10 @@ bindsym $super+minus scratchpad show
 #navigate workspaces next / previous
 bindsym $super+Tab workspace next
 bindsym $super+Shift+Tab workspace prev
+bindsym $super+m exec --no-startup-id \
+     pkill btop || kitty --class btop_toggle -e btop
 
-
+for_window [instance="btop_toggle"] floating enable, move position center, resize set 80 ppt 70 ppt
 # switch to workspace
 bindsym $super+1 workspace 1
 bindsym $super+2 workspace 2
